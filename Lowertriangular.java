@@ -1,7 +1,6 @@
 package project;
 import java.util.Scanner;
-
-public class oddevenmatrix {
+public class Lowertriangular {
 
 	public static void main(String[] args) {
 		Scanner userinput = new Scanner(System.in);
@@ -16,25 +15,26 @@ public class oddevenmatrix {
 				arr[i][j] = userinput.nextInt();
 			}
 		}
-		
-		int even = 0;
-		int odd = 0;
-		
+		int j = 0;
 		for(int i = 0;i<n;i++) {
-			for(int j = 0;j<n;j++) {
-				if(arr[i][j]%2 == 0) {
-					even++;
-				}
-				else {
-					odd++;
-				}
+			j = i+1;
+			while(j<m) {
+				arr[i][j] = 0;
+				j++;
 			}
+			System.out.println();
 		}
 		
-		System.out.println("Even number in your matrix is : " + even);
-		System.out.println("Odd number in your matrix is : " + odd);
+		System.out.println("your lower triangular matrix is : ");
+		for(int i = 0;i<n;i++) {
+			for(int k = 0;k<m;k++) {
+				System.out.print(arr[i][k] + "\t");
+			}
+			System.out.println();
+		}
 		
 		userinput.close();
+
 	}
 
 }

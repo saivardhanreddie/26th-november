@@ -1,7 +1,7 @@
 package project;
 import java.util.Scanner;
 
-public class oddevenmatrix {
+public class sparematrix{
 
 	public static void main(String[] args) {
 		Scanner userinput = new Scanner(System.in);
@@ -17,24 +17,30 @@ public class oddevenmatrix {
 			}
 		}
 		
-		int even = 0;
-		int odd = 0;
+		int zero = 0;
+		int number = 0;
 		
 		for(int i = 0;i<n;i++) {
-			for(int j = 0;j<n;j++) {
-				if(arr[i][j]%2 == 0) {
-					even++;
+			for(int j = 0;j<m;j++) {
+				if(arr[i][j] == 0) {
+					zero++;
 				}
 				else {
-					odd++;
+					number++;
 				}
 			}
 		}
 		
-		System.out.println("Even number in your matrix is : " + even);
-		System.out.println("Odd number in your matrix is : " + odd);
+		if(zero>number) {
+			System.out.println("your Matrix is sparse matrix");
+		}
+		else {
+			System.out.println("your Matrix is not sparse matrix");
+		}
 		
 		userinput.close();
+
 	}
 
 }
+
